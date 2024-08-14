@@ -20,6 +20,8 @@ COPY layers/*.md ./layers/
 COPY *.md ./
 
 WORKDIR /src/nav-app
+RUN chmod -R 775 /src/nav-app
+RUN chown -R node:root /src/nav-app
 EXPOSE 4200
 
 CMD npm start
